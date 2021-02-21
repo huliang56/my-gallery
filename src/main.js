@@ -1,5 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import './index.css'
+import { createApp } from 'vue';
+import { Swipe, SwipeItem } from 'vant';
+import 'vant/lib/index.css';
+import App from './App.vue';
+import './index.css';
 
-createApp(App).mount('#app')
+createApp(App).use(Swipe).use(SwipeItem).mount('#app');
