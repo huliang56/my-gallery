@@ -5,6 +5,9 @@ import {
   Swipe,
   SwipeItem,
   ActionSheet,
+  Grid,
+  GridItem,
+  Divider,
   Tab,
   Tabs,
   Lazyload,
@@ -19,6 +22,9 @@ createApp(App)
   .use(Swipe)
   .use(SwipeItem)
   .use(ActionSheet)
+  .use(Grid)
+  .use(GridItem)
+  .use(Divider)
   .use(Tab)
   .use(Tabs)
   .use(Lazyload)

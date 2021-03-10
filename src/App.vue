@@ -3,7 +3,7 @@
   <MainList />
   <van-action-sheet
     v-model:show="show"
-    title="标题"
+    title="胡亮&余晔妮"
     :round="false"
     close-icon="arrow-left"
     close-on-popstate
@@ -22,7 +22,7 @@ import ContentTab from './components/ContentTab.vue';
 export default {
   components: { SwipeHeader, MainList, ContentTab },
   setup() {
-    const show = ref(true);
+    const show = ref(false);
     provide('CONFIG', readonly(CONFIG));
 
     return {

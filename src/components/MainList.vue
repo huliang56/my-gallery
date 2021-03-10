@@ -1,32 +1,31 @@
 <template>
-  <van-swipe class="swipe-header" :autoplay="3000">
-    <van-swipe-item v-for="image in images" :key="image">
-      <img :src="image" />
-    </van-swipe-item>
-  </van-swipe>
+  <van-grid class="main-list" :border="false" :column-num="2" :gutter="15">
+    <van-grid-item v-for="group of CONFIG" :key="group.title">
+      <van-image :src="group.images[0].url" />
+      <div>{{ group.title }}</div>
+    </van-grid-item>
+  </van-grid>
 </template>
 
 <script>
+import { inject } from 'vue';
 export default {
   setup() {
-    const images = [
-      'https://img.yzcdn.cn/vant/apple-1.jpg',
-      'https://img.yzcdn.cn/vant/apple-1.jpg',
-      'https://img.yzcdn.cn/vant/apple-1.jpg',
-    ];
-    return { images };
+    const CONFIG = inject('CONFIG');
+    return { CONFIG };
   },
 };
 </script>
+
 <style lang="scss">
-.swipe-header .van-swipe-item {
-  color: #fff;
-  font-size: 20px;
-  line-height: 150px;
-  text-align: center;
-  background-color: #39a9ed;
+.main-list {
+  margin: 20px 0;
+  .van-grid-item__content {
+    padding: 0;
+    background-color: transparent;
+  }
   img {
-    width: 100%;
+    border-radius: 5px;
   }
 }
 </style>
