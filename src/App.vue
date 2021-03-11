@@ -65,9 +65,18 @@ export default {
       }));
     };
 
+    const onpopstate = () => {
+      if (show.value) {
+        show.value = false;
+        return false;
+      }
+    };
+    window.addEventListener('popstate', onpopstate, false);
+
     const showTabs = (name) => {
       active.value = name;
       show.value = true;
+      history.pushState('#' + name, name);
     };
 
     const previewImage = (name, startPosition) => {
