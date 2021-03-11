@@ -20,8 +20,11 @@ export default {
 </script>
 
 <style lang="scss">
-.swipe-header .van-swipe-item img {
-  display: block;
-  width: 100%;
+.swipe-header {
+  min-height: 200px;
+  .van-swipe-item img {
+    display: block;
+    width: 100%;
+  }
 }
 </style>

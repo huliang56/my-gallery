@@ -7,9 +7,8 @@ import {
   ActionSheet,
   Grid,
   GridItem,
-  Divider,
-  Tab,
   Tabs,
+  Tab,
   Lazyload,
 } from 'vant';
 import 'vant/lib/index.css';
@@ -18,14 +17,13 @@ import './index.css';
 
 createApp(App)
   .use(VanImage)
+  .use(Lazyload)
   .use(Loading)
   .use(Swipe)
   .use(SwipeItem)
-  .use(ActionSheet)
   .use(Grid)
   .use(GridItem)
-  .use(Divider)
-  .use(Tab)
+  .use(ActionSheet)
   .use(Tabs)
-  .use(Lazyload)
+  .use(Tab)
   .mount('#app');
