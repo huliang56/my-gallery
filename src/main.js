@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { initSentry } from './lib/sentry';
 import {
   Image as VanImage,
   Loading,
@@ -15,7 +16,10 @@ import 'vant/lib/index.css';
 import App from './App.vue';
 import './index.css';
 
-createApp(App)
+const app = createApp(App);
+initSentry(app);
+
+app
   .use(VanImage)
   .use(Lazyload)
   .use(Loading)

@@ -46,8 +46,9 @@
 </template>
 
 <script>
-import { ref, readonly } from 'vue';
+import { ref, readonly, onMounted } from 'vue';
 import { ImagePreview } from 'vant';
+import Sentry from './lib/sentry';
 import CONFIG from './config.json';
 import SwipeHeader from './components/SwipeHeader.vue';
 
@@ -83,6 +84,10 @@ export default {
       const images = CONFIG[name].images.map((i) => i.url);
       ImagePreview({ images, startPosition });
     };
+
+    onMounted(() => {
+      Sentry.captureMessage('PV');
+    });
 
     return {
       CONFIG: readonly(CONFIG),
